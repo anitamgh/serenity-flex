@@ -1,0 +1,16 @@
+body{
+    direction:rtl;
+    font-family:'Vazirmatn';
+    margin: 0;
+}
+.wrapper{
+    max-width:1200px;
+    margin:0 auto;
+    padding:5px;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
