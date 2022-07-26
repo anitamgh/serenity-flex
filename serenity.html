@@ -9,8 +9,16 @@
             <div class="header">
                 <div class="wrapper flexbox">
                 <div class="right">
-                    <div class="mobile-main-menu">
+                    <div onclick="showMenu()" class="mobile-main-menu">
                         <a href="#"><i class="fa-solid fa-bars"></i></a>
+                    </div>
+                    <div id="drawer-menu" class="drawer-menu">
+                        <p><a href="#">خوش آمدید</a></p>
+                        <p><a href="#">درباره</a></p>
+                        <p><a href="#">خدمات</a></p>
+                        <p><a href="#">تیم</a></p>
+                        <p><a href="#">بلاگ</a></p>
+                        <p><a href="#">تماس</a></p>
                     </div>
                     <ul>
                         <li><a href="#">خوش آمدید</a></li>
@@ -429,5 +437,15 @@
                     <a href="#"><span>پورد بای ووردپرس</span></a>
                 </div>
         </div>
+        <script>
+            function showMenu(){
+               var drawerMenu = document.getElementById("drawer-menu")
+               if (drawerMenu.classList.contains("show")){
+                drawerMenu.classList.remove("show")
+               } else{
+                drawerMenu.classList.add("show")
+               }
+            }
+        </script>
     </body>
 </html>
