@@ -6,7 +6,7 @@
     </head>
     <body>
         <div class="first-box">
-            <div class="header">
+            <div id="header" class="header">
                 <div class="wrapper flexbox">
                 <div class="right">
                     <div onclick="showMenu()" class="mobile-main-menu">
@@ -46,7 +46,7 @@
                                 <h3>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون </h3>
                         </div>
                         <div class="key">
-                            <span><a href="#">دانلود</a></span>
+                            <span id="download"><a href="#">دانلود</a></span>
                             <span><a href="#">بیشتر</a></span>
                         </div>
                     </div>
@@ -438,14 +438,27 @@
                 </div>
         </div>
         <script>
-            function showMenu(){
-               var drawerMenu = document.getElementById("drawer-menu")
-               if (drawerMenu.classList.contains("show")){
-                drawerMenu.classList.remove("show")
-               } else{
-                drawerMenu.classList.add("show")
-               }
+            document.addEventListener("scroll" , func)
+            function func(){
+                var header = document.getElementById("header")
+                if(window.scrollY >= 20){
+                    header.classList.add("sticky")
+                } else{
+                    header.classList.remove("sticky")
+                }
             }
+            document.addEventListener("resize" , hideMenu)
+            function hideMenu(){
+                var drawerMenu = document.getElementById("drawer-menu")
+                if(window.innerWidth >= 630){
+                    drawerMenu.classList.remove("show")
+                }
+            }
+            function showMenu(){
+                var drawerMenu = document.getElementById("drawer-menu")
+                drawerMenu.classList.toggle("show")
+            }
+            console.log(window.innerWidth)
         </script>
     </body>
 </html>
