@@ -447,13 +447,12 @@
                     header.classList.remove("sticky")
                 }
             }
-            document.addEventListener("resize" , hideMenu)
-            function hideMenu(){
+            window.addEventListener("resize" , function(){
                 var drawerMenu = document.getElementById("drawer-menu")
-                if(window.innerWidth >= 630){
+                if(window.innerWidth >= 650){
                     drawerMenu.classList.remove("show")
                 }
-            }
+            })
             function showMenu(){
                 var drawerMenu = document.getElementById("drawer-menu")
                 drawerMenu.classList.toggle("show")
